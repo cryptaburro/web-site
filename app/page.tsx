@@ -12,6 +12,7 @@ export default function Component() {
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const [isJourneyOpen, setIsJourneyOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -86,12 +87,28 @@ export default function Component() {
             Join the revolution. Secure your future with the hardest money ever created.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-black font-black text-lg px-8 py-4 h-auto"
-            >
-              START YOUR JOURNEY
-            </Button>
+            <Dialog open={isJourneyOpen} onOpenChange={setIsJourneyOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 text-black font-black text-lg px-8 py-4 h-auto"
+                >
+                  START YOUR JOURNEY
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <button
+                    onClick={() => setIsJourneyOpen(false)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </button>
+                  <Image src="/journey-image.jpeg" alt="Bitcoin to the Moon" fill className="object-contain" priority />
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <Button
               variant="outline"
               size="lg"
