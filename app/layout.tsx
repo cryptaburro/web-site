@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "NOE 21", // Changed from "v0 App"
   description: "Created with v0",
   generator: "v0.dev",
+  icons: {
+    icon: "/favicon.webp", // Updated favicon path
+  },
 }
 
 export default function RootLayout({
