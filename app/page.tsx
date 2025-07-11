@@ -275,7 +275,7 @@ export default function Component() {
       {/* Quote Section */}
       <section className="px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="font-oswald font-black leading-tight mb-8 text-3xl">
+          <blockquote className="font-oswald font-black leading-tight mb-8 text-3xl text-black">
             "Y si no perdonó al mundo viejo, mas guardó á Noé, pregonero de justicia, con otras siete personas, trayendo
             el diluvio sobre el mundo de malvados"
           </blockquote>
