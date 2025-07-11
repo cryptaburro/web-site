@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import Image from "next/image"
 import { TrendingUp, Shield, Zap, X } from "lucide-react"
-import Link from "next/link"
 import { useState } from "react"
 
 export default function Component() {
@@ -13,6 +12,11 @@ export default function Component() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [isJourneyOpen, setIsJourneyOpen] = useState(false)
+  const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false)
+  const [isGetBitcoinNowOpen, setIsGetBitcoinNowOpen] = useState(false)
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
+  const [isTermsOpen, setIsTermsOpen] = useState(false)
+  const [isSupportOpen, setIsSupportOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -109,13 +113,34 @@ export default function Component() {
               </DialogContent>
             </Dialog>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-black text-lg px-8 py-4 h-auto bg-transparent"
-            >
-              LEARN MORE
-            </Button>
+            <Dialog open={isLearnMoreOpen} onOpenChange={setIsLearnMoreOpen}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-black text-lg px-8 py-4 h-auto bg-transparent"
+                >
+                  LEARN MORE
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <button
+                    onClick={() => setIsLearnMoreOpen(false)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </button>
+                  <Image
+                    src="/learn-more-image.jpeg"
+                    alt="Bitcoin Education and Mining"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
@@ -177,9 +202,30 @@ export default function Component() {
           <p className="text-xl font-bold text-black mb-12 max-w-2xl mx-auto">
             Don't wait. Every day you delay is a day you're not protecting your wealth from inflation.
           </p>
-          <Button size="lg" className="bg-black hover:bg-gray-800 text-white font-black text-xl px-12 py-6 h-auto">
-            GET BITCOIN NOW
-          </Button>
+          <Dialog open={isGetBitcoinNowOpen} onOpenChange={setIsGetBitcoinNowOpen}>
+            <DialogTrigger asChild>
+              <Button size="lg" className="bg-black hover:bg-gray-800 text-white font-black text-xl px-12 py-6 h-auto">
+                GET BITCOIN NOW
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <button
+                  onClick={() => setIsGetBitcoinNowOpen(false)}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                >
+                  <X className="h-6 w-6 text-white" />
+                </button>
+                <Image
+                  src="/get-bitcoin-now-image.png"
+                  alt="Veintiuno Bitcoin"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
@@ -191,15 +237,56 @@ export default function Component() {
             <span className="text-xl font-black">NOE 21</span>
           </div>
           <div className="flex space-x-8">
-            <Link href="#" className="font-bold hover:text-orange-500 transition-colors">
-              PRIVACY
-            </Link>
-            <Link href="#" className="font-bold hover:text-orange-500 transition-colors">
-              TERMS
-            </Link>
-            <Link href="#" className="font-bold hover:text-orange-500 transition-colors">
-              SUPPORT
-            </Link>
+            <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
+              <DialogTrigger asChild>
+                <button className="font-bold hover:text-orange-500 transition-colors">PRIVACY</button>
+              </DialogTrigger>
+              <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <button
+                    onClick={() => setIsPrivacyOpen(false)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </button>
+                  <Image src="/skull-privacy-image.png" alt="Privacy Policy" fill className="object-contain" priority />
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={isTermsOpen} onOpenChange={setIsTermsOpen}>
+              <DialogTrigger asChild>
+                <button className="font-bold hover:text-orange-500 transition-colors">TERMS</button>
+              </DialogTrigger>
+              <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <button
+                    onClick={() => setIsTermsOpen(false)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </button>
+                  <Image src="/terms-image.jpeg" alt="Terms and Conditions" fill className="object-contain" priority />
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={isSupportOpen} onOpenChange={setIsSupportOpen}>
+              <DialogTrigger asChild>
+                <button className="font-bold hover:text-orange-500 transition-colors">SUPPORT</button>
+              </DialogTrigger>
+              <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <button
+                    onClick={() => setIsSupportOpen(false)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                  >
+                    <X className="h-6 w-6 text-white" />
+                  </button>
+                  <Image src="/support-image.png" alt="Technical Support" fill className="object-contain" priority />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
         <div className="text-center mt-8 pt-8 border-t border-orange-500/20">
