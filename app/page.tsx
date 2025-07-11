@@ -49,13 +49,7 @@ export default function Component() {
               <button className="flex items-center space-x-3 cursor-pointer">
                 {" "}
                 {/* Make the logo and text clickable */}
-                <Image
-                  src="/noahs-ark-logo.webp"
-                  alt="NOE 21 Logo"
-                  width={65}
-                  height={65}
-                  className="h-16 w-16 rounded-full"
-                />
+                <Image src="/45.webp" alt="NOE 21 Logo" width={65} height={65} className="h-16 w-16 rounded-full" />
                 <h1 className="text-5xl font-oswald font-black tracking-tight text-white">NOE 21</h1>
               </button>
             </DialogTrigger>
@@ -324,13 +318,7 @@ export default function Component() {
       <footer className="px-6 lg:px-8 py-12 border-t border-orange-500/20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <Image
-              src="/noahs-ark-logo.webp"
-              alt="NOE 21 Logo"
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-full"
-            />
+            <Image src="/45.webp" alt="NOE 21 Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
             <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
           </div>
           <div className="flex space-x-8">
