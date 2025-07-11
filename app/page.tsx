@@ -23,8 +23,14 @@ export default function Component() {
       {/* Header */}
       <header className="px-6 lg:px-8 h-20 flex items-center justify-between border-b border-orange-500/20">
         <div className="flex items-center space-x-3">
-          <Image src="/icon-noe21.png" alt="NOE 21 Icon" width={52} height={52} className="h-13 w-13" />
-          <h1 className="text-3xl font-black tracking-tight">NOE 21</h1>
+          <Image
+            src="/noahs-ark-logo.webp"
+            alt="NOE 21 Logo"
+            width={65}
+            height={65}
+            className="h-16 w-16 rounded-full"
+          />
+          <h1 className="text-5xl font-black tracking-tight text-white">NOE 21</h1>
         </div>
         <nav className="hidden md:flex space-x-8">
           <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
@@ -84,7 +90,7 @@ export default function Component() {
       <section className="px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-6xl lg:text-8xl font-black mb-8 leading-tight">
-            BITCOIN
+            <span className="block text-orange-600 text-8xl lg:text-[10rem]">BITCOIN</span>
             <span className="block text-orange-500">IS FREEDOM</span>
           </h2>
           <p className="text-xl lg:text-2xl font-bold text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -233,8 +239,14 @@ export default function Component() {
       <footer className="px-6 lg:px-8 py-12 border-t border-orange-500/20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <Image src="/icon-noe21.png" alt="NOE 21 Icon" width={31} height={31} className="h-8 w-8" />
-            <span className="text-xl font-black">NOE 21</span>
+            <Image
+              src="/noahs-ark-logo.webp"
+              alt="NOE 21 Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full"
+            />
+            <span className="text-3xl font-black text-white">NOE 21</span>
           </div>
           <div className="flex space-x-8">
             <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
