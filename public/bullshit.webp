@@ -1,7 +1,4 @@
-/
-
-```typescriptreact file="app/page.tsx"
-[v0-no-op-code-block-prefix]"use client"
+"use client"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

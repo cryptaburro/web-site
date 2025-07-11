@@ -386,7 +386,13 @@ export default function Component() {
                   >
                     <X className="h-6 w-6 text-white" />
                   </button>
-                  <Image src="/bullshit.webp" alt="This is Bullshit" fill className="object-contain" priority />
+                  <Image
+                    src="/smells-like-ath.jpeg"
+                    alt="Smells Like Another ATH Is Coming"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
               </DialogContent>
             </Dialog>
