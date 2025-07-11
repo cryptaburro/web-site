@@ -2,10 +2,20 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { TrendingUp, Shield, Zap, X } from "lucide-react"
-import { useState } from "react"
+import { useState, useActionState } from "react"
+import { QRCodeSVG } from "qrcode.react" // Import QRCodeSVG
+import { createLightningInvoice } from "@/app/invoice-action" // Import the server action
 
 export default function Component() {
   const [isAboutOpen, setIsAboutOpen] = useState(false)
@@ -17,20 +27,82 @@ export default function Component() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
   const [isTermsOpen, setIsTermsOpen] = useState(false)
   const [isSupportOpen, setIsSupportOpen] = useState(false)
+  const [isInvoiceModalOpen, setIsInvoiceModalOpen] = useState(false) // New state for invoice modal
+  const [satsAmount, setSatsAmount] = useState<number | "">("") // State for sats input
+
+  // useActionState for invoice generation
+  const [invoiceState, createInvoiceAction, isInvoicePending] = useActionState(
+    async (prevState: any, formData: FormData) => {
+      const amount = Number.parseInt(formData.get("satsAmount") as string)
+      return await createLightningInvoice(amount)
+    },
+    { success: false, invoice: "", error: "" },
+  )
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-white text-white">
       {/* Header */}
       <header className="px-6 lg:px-8 h-20 flex items-center justify-between border-b border-orange-500/20">
         <div className="flex items-center space-x-3">
-          <Image
-            src="/noahs-ark-logo.webp"
-            alt="NOE 21 Logo"
-            width={65}
-            height={65}
-            className="h-16 w-16 rounded-full"
-          />
-          <h1 className="text-5xl font-oswald font-black tracking-tight text-white">NOE 21</h1>
+          <Dialog open={isInvoiceModalOpen} onOpenChange={setIsInvoiceModalOpen}>
+            <DialogTrigger asChild>
+              <button className="flex items-center space-x-3 cursor-pointer">
+                {" "}
+                {/* Make the logo and text clickable */}
+                <Image
+                  src="/noahs-ark-logo.webp"
+                  alt="NOE 21 Logo"
+                  width={65}
+                  height={65}
+                  className="h-16 w-16 rounded-full"
+                />
+                <h1 className="text-5xl font-oswald font-black tracking-tight text-white">NOE 21</h1>
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md p-6 bg-black border-orange-500/20 text-white">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-oswald text-orange-500">Generate Lightning Invoice</DialogTitle>
+                <DialogDescription className="text-gray-300">
+                  Enter the amount in sats to generate a Lightning Network invoice for 'nacho@coinos.io'.
+                </DialogDescription>
+              </DialogHeader>
+              <form action={createInvoiceAction} className="space-y-4 mt-4">
+                <div>
+                  <label htmlFor="satsAmount" className="block text-sm font-bold text-gray-300 mb-2">
+                    Amount in Sats
+                  </label>
+                  <Input
+                    id="satsAmount"
+                    name="satsAmount"
+                    type="number"
+                    value={satsAmount}
+                    onChange={(e) => setSatsAmount(e.target.value === "" ? "" : Number.parseInt(e.target.value))}
+                    placeholder="e.g., 1000"
+                    min="1"
+                    className="bg-gray-800 text-white border-orange-500/20 focus:border-orange-500"
+                    required
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-black font-oswald font-black"
+                  disabled={isInvoicePending || satsAmount === "" || satsAmount <= 0}
+                >
+                  {isInvoicePending ? "Generating..." : "Generate Invoice"}
+                </Button>
+              </form>
+              {invoiceState.error && <p className="text-red-500 text-sm mt-4">{invoiceState.error}</p>}
+              {invoiceState.success && invoiceState.invoice && (
+                <div className="mt-6 text-center">
+                  <p className="text-lg font-bold text-orange-500 mb-2">Scan to Pay:</p>
+                  <div className="bg-white p-4 rounded-lg inline-block">
+                    <QRCodeSVG value={invoiceState.invoice} size={200} level="H" />
+                  </div>
+                  <p className="text-sm text-gray-400 break-all mt-4">{invoiceState.invoice}</p>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
         <nav className="hidden md:flex space-x-8">
           <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
