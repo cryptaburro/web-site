@@ -1,10 +1,18 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import Image from "next/image"
-import { TrendingUp, Shield, Zap } from "lucide-react"
+import { TrendingUp, Shield, Zap, X } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Component() {
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
@@ -14,15 +22,56 @@ export default function Component() {
           <h1 className="text-3xl font-black tracking-tight">NOE 21</h1>
         </div>
         <nav className="hidden md:flex space-x-8">
-          <Link href="#about" className="text-lg font-bold hover:text-orange-500 transition-colors">
-            ABOUT
-          </Link>
-          <Link href="#services" className="text-lg font-bold hover:text-orange-500 transition-colors">
-            SERVICES
-          </Link>
-          <Link href="#contact" className="text-lg font-bold hover:text-orange-500 transition-colors">
-            CONTACT
-          </Link>
+          <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
+            <DialogTrigger asChild>
+              <button className="text-lg font-bold hover:text-orange-500 transition-colors">ABOUT</button>
+            </DialogTrigger>
+            <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <button
+                  onClick={() => setIsAboutOpen(false)}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                >
+                  <X className="h-6 w-6 text-white" />
+                </button>
+                <Image src="/about-image.png" alt="About NOE 21" fill className="object-contain" priority />
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog open={isServicesOpen} onOpenChange={setIsServicesOpen}>
+            <DialogTrigger asChild>
+              <button className="text-lg font-bold hover:text-orange-500 transition-colors">SERVICES</button>
+            </DialogTrigger>
+            <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <button
+                  onClick={() => setIsServicesOpen(false)}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                >
+                  <X className="h-6 w-6 text-white" />
+                </button>
+                <Image src="/services-image.jpeg" alt="Bitcoin Services" fill className="object-contain" priority />
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+            <DialogTrigger asChild>
+              <button className="text-lg font-bold hover:text-orange-500 transition-colors">CONTACT</button>
+            </DialogTrigger>
+            <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <button
+                  onClick={() => setIsContactOpen(false)}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+                >
+                  <X className="h-6 w-6 text-white" />
+                </button>
+                <Image src="/contact-image.png" alt="La Crypta House" fill className="object-contain" priority />
+              </div>
+            </DialogContent>
+          </Dialog>
         </nav>
       </header>
 
