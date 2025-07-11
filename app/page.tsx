@@ -30,13 +30,12 @@ export default function Component() {
             height={65}
             className="h-16 w-16 rounded-full"
           />
-          <h1 className="text-5xl font-oswald font-black tracking-tight text-white">NOE 21</h1> {/* Aplicamos Oswald */}
+          <h1 className="text-5xl font-oswald font-black tracking-tight text-white">NOE 21</h1>
         </div>
         <nav className="hidden md:flex space-x-8">
           <Dialog open={isAboutOpen} onOpenChange={setIsAboutOpen}>
             <DialogTrigger asChild>
-              <button className="text-lg font-oswald font-bold hover:text-orange-500 transition-colors">ABOUT</button>{" "}
-              {/* Aplicamos Oswald */}
+              <button className="text-lg font-oswald font-bold hover:text-orange-500 transition-colors">ABOUT</button>
             </DialogTrigger>
             <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
               <div className="relative w-full h-full flex items-center justify-center">
@@ -55,8 +54,7 @@ export default function Component() {
             <DialogTrigger asChild>
               <button className="text-lg font-oswald font-bold hover:text-orange-500 transition-colors">
                 SERVICES
-              </button>{" "}
-              {/* Aplicamos Oswald */}
+              </button>
             </DialogTrigger>
             <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
               <div className="relative w-full h-full flex items-center justify-center">
@@ -73,8 +71,7 @@ export default function Component() {
 
           <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
             <DialogTrigger asChild>
-              <button className="text-lg font-oswald font-bold hover:text-orange-500 transition-colors">CONTACT</button>{" "}
-              {/* Aplicamos Oswald */}
+              <button className="text-lg font-oswald font-bold hover:text-orange-500 transition-colors">CONTACT</button>
             </DialogTrigger>
             <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
               <div className="relative w-full h-full flex items-center justify-center">
@@ -102,8 +99,6 @@ export default function Component() {
         />
         <div className="max-w-4xl mx-auto text-center relative z-0">
           <h2 className="text-6xl lg:text-8xl font-oswald font-black mb-8 leading-tight">
-            {" "}
-            {/* Aplicamos Oswald */}
             <span className="block text-orange-600 text-8xl lg:text-[10rem]">BITCOIN</span>
             <span className="block text-orange-500">IS FREEDOM</span>
           </h2>
@@ -115,7 +110,7 @@ export default function Component() {
               <DialogTrigger asChild>
                 <Button
                   size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 text-black font-oswald font-black text-lg px-8 py-4 h-auto" // Aplicamos Oswald
+                  className="bg-orange-500 hover:bg-orange-600 text-black font-oswald font-black text-lg px-8 py-4 h-auto"
                 >
                   START YOUR JOURNEY
                 </Button>
@@ -138,7 +133,7 @@ export default function Component() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-oswald font-black text-lg px-8 py-4 h-auto bg-transparent" // Aplicamos Oswald
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-oswald font-black text-lg px-8 py-4 h-auto bg-transparent"
                 >
                   LEARN MORE
                 </Button>
@@ -169,15 +164,13 @@ export default function Component() {
       <section id="services" className="px-6 lg:px-8 py-24 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-4xl lg:text-6xl font-oswald font-black text-center mb-16">
-            {" "}
-            {/* Aplicamos Oswald */}
             WHY <span className="text-orange-500">BITCOIN</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-black border-orange-500/20 hover:border-orange-500/40 transition-colors">
               <CardContent className="p-8 text-center">
                 <Shield className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-                <h4 className="text-2xl font-oswald font-black mb-4">SECURITY</h4> {/* Aplicamos Oswald */}
+                <h4 className="text-2xl font-oswald font-black mb-4">SECURITY</h4>
                 <p className="text-gray-300 font-bold text-lg">
                   Unbreakable cryptographic security protecting your wealth for generations.
                 </p>
@@ -187,7 +180,7 @@ export default function Component() {
             <Card className="bg-black border-orange-500/20 hover:border-orange-500/40 transition-colors">
               <CardContent className="p-8 text-center">
                 <TrendingUp className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-                <h4 className="text-2xl font-oswald font-black mb-4">GROWTH</h4> {/* Aplicamos Oswald */}
+                <h4 className="text-2xl font-oswald font-black mb-4">GROWTH</h4>
                 <p className="text-gray-300 font-bold text-lg">
                   Limited supply of 21 million coins. Digital scarcity drives value.
                 </p>
@@ -197,7 +190,7 @@ export default function Component() {
             <Card className="bg-black border-orange-500/20 hover:border-orange-500/40 transition-colors">
               <CardContent className="p-8 text-center">
                 <Zap className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-                <h4 className="text-2xl font-oswald font-black mb-4">FREEDOM</h4> {/* Aplicamos Oswald */}
+                <h4 className="text-2xl font-oswald font-black mb-4">FREEDOM</h4>
                 <p className="text-gray-300 font-bold text-lg">
                   Be your own bank. No intermediaries. Complete financial sovereignty.
                 </p>
@@ -211,20 +204,17 @@ export default function Component() {
       <section className="px-6 lg:px-8 py-24">
         <div className="max-w-4xl mx-auto text-center">
           <blockquote className="font-oswald font-black leading-tight mb-8 text-3xl">
-            {" "}
-            {/* Aplicamos Oswald */}
             "Y si no perdonó al mundo viejo, mas guardó á Noé, pregonero de justicia, con otras siete personas, trayendo
             el diluvio sobre el mundo de malvados"
           </blockquote>
-          <cite className="text-xl font-oswald font-bold text-black"> Peter 2:5</cite> {/* Aplicamos Oswald */}
+          <cite className="text-xl font-oswald font-bold text-black">Peter 2:5</cite>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="px-6 lg:px-8 py-24 bg-orange-500">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl lg:text-6xl font-oswald font-black text-black mb-8">READY TO START?</h3>{" "}
-          {/* Aplicamos Oswald */}
+          <h3 className="text-4xl lg:text-6xl font-oswald font-black text-black mb-8">READY TO START?</h3>
           <p className="text-xl font-bold text-black mb-12 max-w-2xl mx-auto">
             Don't wait. Every day you delay is a day you're not protecting your wealth from inflation.
           </p>
@@ -234,8 +224,6 @@ export default function Component() {
                 size="lg"
                 className="bg-black hover:bg-gray-800 text-white font-oswald font-black text-xl px-12 py-6 h-auto"
               >
-                {" "}
-                {/* Aplicamos Oswald */}
                 GET BITCOIN NOW
               </Button>
             </DialogTrigger>
@@ -271,15 +259,14 @@ export default function Component() {
               height={40}
               className="h-10 w-10 rounded-full"
             />
-            <span className="text-3xl font-oswald font-black text-black">NOE 21</span> {/* Aplicamos Oswald */}
+            <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
           </div>
           <div className="flex space-x-8">
             <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
               <DialogTrigger asChild>
                 <button className="font-oswald font-bold text-black hover:text-orange-500 transition-colors">
                   PRIVACY
-                </button>{" "}
-                {/* Aplicamos Oswald */}
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -298,8 +285,7 @@ export default function Component() {
               <DialogTrigger asChild>
                 <button className="font-oswald font-bold text-black hover:text-orange-500 transition-colors">
                   TERMS
-                </button>{" "}
-                {/* Aplicamos Oswald */}
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -318,8 +304,7 @@ export default function Component() {
               <DialogTrigger asChild>
                 <button className="font-oswald font-bold text-black hover:text-orange-500 transition-colors">
                   SUPPORT
-                </button>{" "}
-                {/* Aplicamos Oswald */}
+                </button>
               </DialogTrigger>
               <DialogContent className="max-w-none w-screen h-screen p-0 bg-black border-none">
                 <div className="relative w-full h-full flex items-center justify-center">
