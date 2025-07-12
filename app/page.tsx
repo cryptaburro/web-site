@@ -163,7 +163,7 @@ export default function Component() {
       {/* Hero Section */}
       <section className="relative px-6 lg:px-8 py-24 lg:py-32">
         <Image
-          src="/bitcoin-watermark.png"
+          src="/bitcoin-growth-watermark.jpeg"
           alt="Bitcoin Watermark"
           fill
           className="object-contain opacity-5 -z-10"
@@ -322,18 +322,25 @@ export default function Component() {
 
       {/* Footer */}
       <footer className="px-6 lg:px-8 py-12 border-t border-orange-500/20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/45-MLWyp6jncm6TZNvDWdMYkHUao8NCzZ.webp"
-              alt="NOE 21 Logo"
-              width={40}
-              height={40}
-              className="h-10 w-10 rounded-full"
-            />
-            <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 md:flex-row md:justify-between">
+          <div className="flex items-center space-x-3">
+            <a
+              href="https://primal.net/p/nprofile1qqszzsme7fx4098me4z9fs8zglfseuha93635kug44ydep9lu525tcg6cc3f4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/45-MLWyp6jncm6TZNvDWdMYkHUao8NCzZ.webp"
+                alt="NOE 21 Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full"
+              />
+              <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
+            </a>
           </div>
-          <div className="flex space-x-8">
+          <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
             <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
               <DialogTrigger asChild>
                 <button className="font-oswald font-bold text-black hover:text-orange-500 transition-colors">
@@ -398,7 +405,7 @@ export default function Component() {
             </Dialog>
           </div>
         </div>
-        <div className="text-center mt-8 pt-8 border-t border-orange-500/20">
+        <div className="flex flex-col items-center mt-8 pt-8 border-t border-orange-500/20">
           <p className="font-bold text-black">© {new Date().getFullYear()} NOE 21. BITCOIN TO THE MOON.</p>
         </div>
       </footer>
