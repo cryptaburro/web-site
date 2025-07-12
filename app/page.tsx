@@ -244,7 +244,7 @@ export default function Component() {
                 <Shield className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">SECURITY</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Unbreakable cryptographic security protecting your wealth for generations.
+                  Unbreakable cryptographic security. 
                 </p>
               </CardContent>
             </Card>
@@ -254,7 +254,7 @@ export default function Component() {
                 <TrendingUp className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">GROWTH</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Limited supply of 21 million coins. Digital scarcity drives value.
+                  Limited supply of 21 million coins.
                 </p>
               </CardContent>
             </Card>
@@ -264,7 +264,7 @@ export default function Component() {
                 <Zap className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">FREEDOM</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Be your own bank. No intermediaries. Complete financial sovereignty.
+                  Be your own bank. 
                 </p>
               </CardContent>
             </Card>
