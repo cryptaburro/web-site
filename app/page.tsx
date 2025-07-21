@@ -244,7 +244,7 @@ export default function Component() {
                 <Shield className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">SECURITY</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Unbreakable cryptographic security. 
+                  Unbreakable cryptographic security protecting your wealth for generations.
                 </p>
               </CardContent>
             </Card>
@@ -254,7 +254,7 @@ export default function Component() {
                 <TrendingUp className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">GROWTH</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Limited supply of 21 million coins.
+                  Limited supply of 21 million coins. Digital scarcity drives value.
                 </p>
               </CardContent>
             </Card>
@@ -264,7 +264,7 @@ export default function Component() {
                 <Zap className="h-16 w-16 text-orange-500 mx-auto mb-6" />
                 <h4 className="text-2xl font-oswald font-black mb-4">FREEDOM</h4>
                 <p className="text-gray-300 font-bold text-lg">
-                  Be your own bank. 
+                  Be your own bank. No intermediaries. Complete financial sovereignty.
                 </p>
               </CardContent>
             </Card>
@@ -324,21 +324,14 @@ export default function Component() {
       <footer className="px-6 lg:px-8 py-12 border-t border-orange-500/20">
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 md:flex-row md:justify-between">
           <div className="flex items-center space-x-3">
-            <a
-              href="https://primal.net/p/nprofile1qqszzsme7fx4098me4z9fs8zglfseuha93635kug44ydep9lu525tcg6cc3f4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-3"
-            >
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/45-MLWyp6jncm6TZNvDWdMYkHUao8NCzZ.webp"
-                alt="NOE 21 Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10 rounded-full"
-              />
-              <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
-            </a>
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/45-MLWyp6jncm6TZNvDWdMYkHUao8NCzZ.webp"
+              alt="NOE 21 Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full"
+            />
+            <span className="text-3xl font-oswald font-black text-black">NOE 21</span>
           </div>
           <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
             <Dialog open={isPrivacyOpen} onOpenChange={setIsPrivacyOpen}>
@@ -405,7 +398,7 @@ export default function Component() {
             </Dialog>
           </div>
         </div>
-        <div className="flex flex-col items-center mt-8 pt-8 border-t border-orange-500/20">
+        <div className="text-center mt-8 pt-8 border-t border-orange-500/20">
           <p className="font-bold text-black">© {new Date().getFullYear()} NOE 21. BITCOIN TO THE MOON.</p>
         </div>
       </footer>
