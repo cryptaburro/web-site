@@ -195,7 +195,13 @@ export default function Component() {
                   >
                     <X className="h-6 w-6 text-white" />
                   </button>
-                  <Image src="/journey-image.jpeg" alt="Bitcoin to the Moon" fill className="object-contain" priority />
+                  <Image
+                    src="/quetzal-bitcoin-journey.jpeg"
+                    alt="Quetzal Bitcoin Journey"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
               </DialogContent>
             </Dialog>
